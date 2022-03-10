@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_news"
+    app:startDestination="@id/listeHaberler">
+
+    <fragment
+        android:id="@+id/detayHaber"
+        android:name="com.harunsubasi.haberuygulamasi.view.DetayHaber"
+        android:label="DetayHaber"
+        tools:layout="@layout/fragment_detay_haber">
+        <action
+            android:id="@+id/action_detayHaber_to_listeHaberler"
+            app:destination="@id/listeHaberler" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+    </fragment>
+    <fragment
+        android:id="@+id/listeHaberler"
+        android:name="com.harunsubasi.haberuygulamasi.view.ListeHaberler"
+        android:label="ListeHaberler"
+        tools:layout="@layout/fragment_liste_haberler">
+        <action
+            android:id="@+id/action_listeHaberler_to_detayHaber"
+            app:destination="@id/detayHaber" />
+    </fragment>
+</navigation>
